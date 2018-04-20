@@ -15,7 +15,7 @@ public class Recursion {
 	}
 	
 	// Chapter 13 - Exercise 1
-	public String strWedge(int n) {
+	public static String strWedge(int n) {
 		
 
 		String sResult = "";
@@ -36,6 +36,8 @@ public class Recursion {
 		
 		return sResult;
 	}
+	
+	
 	
 	
 }

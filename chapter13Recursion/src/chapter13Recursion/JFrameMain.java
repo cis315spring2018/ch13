@@ -88,11 +88,6 @@ public class JFrameMain extends JFrame {
 		btnFactorial.setBounds(245, 11, 176, 56);
 		contentPane.add(btnFactorial);
 		
-		JButton button = new JButton("13-1");
-		button.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		button.setBounds(245, 101, 176, 56);
-		contentPane.add(button);
-		
 		textFieldEx1 = new JTextField();
 		textFieldEx1.setText("5");
 		textFieldEx1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -106,7 +101,23 @@ public class JFrameMain extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JTextArea txtAnswer13_1 = new JTextArea();
+		txtAnswer13_1.setFont(new Font("Monospaced", Font.PLAIN, 20));
 		txtAnswer13_1.setText("Answer13_1");
 		scrollPane.setViewportView(txtAnswer13_1);
+		
+		JButton button = new JButton("13-1");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// generate a string of stars and new lines
+				// append this string to txtAnswer13_1
+				// read the size value from txtFieldEx1
+				int nStars = Integer.parseInt(textFieldEx1.getText());
+				String sPattern = Recursion.strWedge(nStars);
+				txtAnswer13_1.append("\n\n" + sPattern);
+			}
+		});
+		button.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		button.setBounds(245, 101, 176, 56);
+		contentPane.add(button);
 	}
 }
